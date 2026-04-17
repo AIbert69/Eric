@@ -179,6 +179,9 @@ export default function EricAssistantDemo() {
           'Quote queued for send'
         ]
       }]);
+      // Wait for all the staggered checkmarks to finish animating (~1.5s) + audio tail
+      await sleep(Math.max(AUDIO[5].duration, 2500));
+      setTyping(false); // belt and suspenders — make sure dots are gone
     }
   };
 
@@ -401,7 +404,7 @@ function DesktopView() {
           border: '1px solid rgba(244,239,230,0.1)'
         }} className="intro-enter">
           <div className="mono" style={{
-            fontSize: '10px',
+            fontSize: '12px',
             letterSpacing: '0.3em',
             color: '#00BFA5',
             marginBottom: '24px'
@@ -439,7 +442,7 @@ function DesktopView() {
           </div>
 
           <h1 className="serif" style={{
-            fontSize: '32px',
+            fontSize: '36px',
             fontWeight: 400,
             color: '#F4EFE6',
             margin: '0 0 12px',
@@ -450,7 +453,7 @@ function DesktopView() {
           </h1>
 
           <p style={{
-            fontSize: '15px',
+            fontSize: '17px',
             lineHeight: 1.6,
             color: '#A8A294',
             margin: '0 0 32px'
@@ -466,7 +469,7 @@ function DesktopView() {
             textAlign: 'left'
           }}>
             <div className="mono" style={{
-              fontSize: '10px',
+              fontSize: '12px',
               letterSpacing: '0.2em',
               color: '#00BFA5',
               marginBottom: '12px'
@@ -477,7 +480,7 @@ function DesktopView() {
               margin: 0,
               paddingLeft: '20px',
               color: '#F4EFE6',
-              fontSize: '14px',
+              fontSize: '16px',
               lineHeight: 1.8
             }}>
               <li>Share this URL to your phone (text, WhatsApp, or AirDrop)</li>
@@ -488,7 +491,7 @@ function DesktopView() {
 
           <div className="mono" style={{
             marginTop: '32px',
-            fontSize: '9px',
+            fontSize: '11px',
             letterSpacing: '0.3em',
             color: '#A8A294',
             opacity: 0.5
@@ -542,7 +545,7 @@ function IntroScreen({ onStart }) {
       {/* Top */}
       <div className="selection-none">
         <div className="mono" style={{
-          fontSize: '10px',
+          fontSize: '12px',
           letterSpacing: '0.3em',
           color: '#A8A294',
           textTransform: 'uppercase'
@@ -554,7 +557,7 @@ function IntroScreen({ onStart }) {
       {/* Middle */}
       <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
         <div className="mono" style={{
-          fontSize: '11px',
+          fontSize: '13px',
           letterSpacing: '0.15em',
           color: '#00BFA5'
         }}>
@@ -562,7 +565,7 @@ function IntroScreen({ onStart }) {
         </div>
 
         <h1 className="serif intro-headline" style={{
-          fontSize: 'clamp(42px, 11vw, 64px)',
+          fontSize: 'clamp(48px, 12vw, 72px)',
           fontWeight: 300,
           lineHeight: 1,
           letterSpacing: '-0.03em',
@@ -573,7 +576,7 @@ function IntroScreen({ onStart }) {
         </h1>
 
         <p style={{
-          fontSize: '16px',
+          fontSize: '18px',
           lineHeight: 1.6,
           color: '#A8A294',
           margin: '8px 0 0',
@@ -592,7 +595,7 @@ function IntroScreen({ onStart }) {
             width: '100%',
             padding: '20px',
             borderRadius: '100px',
-            fontSize: '15px',
+            fontSize: '17px',
             letterSpacing: '0.02em',
             display: 'flex',
             alignItems: 'center',
@@ -601,7 +604,7 @@ function IntroScreen({ onStart }) {
           }}
         >
           Begin the morning
-          <span style={{ fontSize: '16px' }}>→</span>
+          <span style={{ fontSize: '18px' }}>→</span>
         </button>
 
         <div style={{
@@ -615,7 +618,7 @@ function IntroScreen({ onStart }) {
             <path d="M15.54 8.46A5 5 0 0115.54 15.54" stroke="#A8A294" strokeWidth="2" strokeLinecap="round"/>
           </svg>
           <span className="mono" style={{
-            fontSize: '10px',
+            fontSize: '12px',
             letterSpacing: '0.15em',
             color: '#A8A294',
             textTransform: 'uppercase'
@@ -681,7 +684,7 @@ function AppView({
           </div>
           <div style={{ minWidth: 0 }}>
             <div className="serif" style={{
-              fontSize: '15px',
+              fontSize: '17px',
               fontWeight: 500,
               color: '#F4EFE6',
               letterSpacing: '-0.01em',
@@ -697,14 +700,14 @@ function AppView({
                     <div className="speaker-bar" style={{ animationDelay: '0.15s', height: '7px' }}></div>
                     <div className="speaker-bar" style={{ animationDelay: '0.3s', height: '7px' }}></div>
                   </div>
-                  <span className="mono" style={{ fontSize: '9px', color: '#00BFA5', letterSpacing: '0.12em', textTransform: 'uppercase', fontWeight: 600 }}>
+                  <span className="mono" style={{ fontSize: '11px', color: '#00BFA5', letterSpacing: '0.12em', textTransform: 'uppercase', fontWeight: 600 }}>
                     Speaking
                   </span>
                 </>
               ) : (
                 <>
                   <div style={{ width: '5px', height: '5px', borderRadius: '50%', background: '#00BFA5', animation: 'breathe 2s ease-in-out infinite' }}></div>
-                  <span className="mono" style={{ fontSize: '9px', color: '#A8A294', letterSpacing: '0.12em', textTransform: 'uppercase' }}>
+                  <span className="mono" style={{ fontSize: '11px', color: '#A8A294', letterSpacing: '0.12em', textTransform: 'uppercase' }}>
                     Always on
                   </span>
                 </>
@@ -756,7 +759,7 @@ function AppView({
         flexShrink: 0
       }}>
         <div className="mono fade-in" key={currentScene} style={{
-          fontSize: '10px',
+          fontSize: '12px',
           letterSpacing: '0.15em',
           color: '#A8A294'
         }}>
@@ -803,7 +806,7 @@ function AppView({
             <button className="btn-ghost" style={{
               padding: '12px 20px',
               borderRadius: '999px',
-              fontSize: '13px'
+              fontSize: '15px'
             }}>
               Edit
             </button>
@@ -813,7 +816,7 @@ function AppView({
               style={{
                 padding: '12px 22px',
                 borderRadius: '999px',
-                fontSize: '13px',
+                fontSize: '15px',
                 display: 'flex',
                 alignItems: 'center',
                 gap: '6px'
@@ -835,7 +838,7 @@ function AppView({
               style={{
                 padding: '13px 22px',
                 borderRadius: '999px',
-                fontSize: '13px',
+                fontSize: '15px',
                 display: 'flex',
                 alignItems: 'center',
                 gap: '8px'
@@ -872,7 +875,7 @@ function AppView({
             maxWidth: '320px',
             padding: '16px',
             borderRadius: '100px',
-            fontSize: '14px',
+            fontSize: '16px',
             fontWeight: 600
           }}>
             See the draft →
@@ -884,31 +887,61 @@ function AppView({
             maxWidth: '320px',
             padding: '16px',
             borderRadius: '100px',
-            fontSize: '14px',
+            fontSize: '16px',
             fontWeight: 600
           }}>
             What happens next →
           </button>
         )}
         {currentScene === 5 && (
-          <button onClick={reset} className="btn-ghost" style={{
+          <button onClick={reset} className="btn-primary" style={{
             width: '100%',
             maxWidth: '320px',
             padding: '16px',
             borderRadius: '100px',
-            fontSize: '13px'
+            fontSize: '16px',
+            fontWeight: 600,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: '8px'
           }}>
-            ↻ Replay from the top
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+              <path d="M1 4V10H7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M3.51 15A9 9 0 1021 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+            Replay from the top
           </button>
         )}
         {(currentScene === 1 || currentScene === 3) && (
-          <div className="mono" style={{
-            fontSize: '10px',
-            letterSpacing: '0.2em',
-            color: '#A8A294',
-            opacity: 0.5
-          }}>
-            {currentScene === 1 && showVoiceOption ? 'TAP TO RESPOND' : 'LISTEN'}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+            {audioPlaying ? (
+              <>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '2px', height: '10px' }}>
+                  <div className="speaker-bar" style={{ animationDelay: '0s', height: '10px' }}></div>
+                  <div className="speaker-bar" style={{ animationDelay: '0.15s', height: '10px' }}></div>
+                  <div className="speaker-bar" style={{ animationDelay: '0.3s', height: '10px' }}></div>
+                  <div className="speaker-bar" style={{ animationDelay: '0.1s', height: '10px' }}></div>
+                </div>
+                <div className="mono" style={{
+                  fontSize: '12px',
+                  letterSpacing: '0.2em',
+                  color: '#00BFA5',
+                  fontWeight: 600
+                }}>
+                  LISTENING
+                </div>
+              </>
+            ) : (
+              <div className="mono" style={{
+                fontSize: '12px',
+                letterSpacing: '0.2em',
+                color: '#A8A294',
+                opacity: 0.5
+              }}>
+                {currentScene === 1 ? 'TAP TO RESPOND' : 'PLEASE WAIT'}
+              </div>
+            )}
           </div>
         )}
       </div>
@@ -922,7 +955,7 @@ function AppView({
 function OvernightView() {
   return (
     <div style={{ padding: '40px 12px', textAlign: 'center' }}>
-      <div className="mono" style={{ fontSize: '10px', color: '#A8A294', letterSpacing: '0.2em' }}>
+      <div className="mono" style={{ fontSize: '12px', color: '#A8A294', letterSpacing: '0.2em' }}>
         LOADING
       </div>
     </div>
@@ -944,7 +977,7 @@ function MessageBubble({ msg }) {
           maxWidth: '92%'
         }}>
           <div className="serif" style={{
-            fontSize: '24px',
+            fontSize: '26px',
             color: '#F4EFE6',
             marginBottom: '4px',
             fontWeight: 400,
@@ -954,7 +987,7 @@ function MessageBubble({ msg }) {
             {msg.greeting}
           </div>
           <div className="serif" style={{
-            fontSize: '14px',
+            fontSize: '16px',
             color: '#A8A294',
             marginBottom: '18px',
             fontWeight: 300,
@@ -963,7 +996,7 @@ function MessageBubble({ msg }) {
             {msg.content}
           </div>
           <div className="mono" style={{
-            fontSize: '10px',
+            fontSize: '12px',
             color: '#00BFA5',
             letterSpacing: '0.15em',
             marginBottom: '10px',
@@ -981,9 +1014,9 @@ function MessageBubble({ msg }) {
                 borderBottom: i < msg.items.length - 1 ? '1px solid rgba(244,239,230,0.08)' : 'none',
                 animation: `slideIn 0.4s ease ${0.3 + i * 0.15}s both`
               }}>
-                <div style={{ fontSize: '14px', color: '#F4EFE6', fontWeight: 400 }}>{item.label}</div>
+                <div style={{ fontSize: '16px', color: '#F4EFE6', fontWeight: 400 }}>{item.label}</div>
                 <div className="mono" style={{
-                  fontSize: '9px',
+                  fontSize: '11px',
                   color: item.meta === 'priority' ? '#E8B05C' : '#A8A294',
                   letterSpacing: '0.1em',
                   textTransform: 'uppercase',
@@ -994,11 +1027,11 @@ function MessageBubble({ msg }) {
               </div>
             ))}
           </div>
-          <div className="serif" style={{ fontSize: '13px', color: '#A8A294', fontStyle: 'italic' }}>
+          <div className="serif" style={{ fontSize: '15px', color: '#A8A294', fontStyle: 'italic' }}>
             {msg.footer}
           </div>
         </div>
-        <div className="mono" style={{ fontSize: '9px', color: '#A8A294', marginTop: '6px', paddingLeft: '8px', opacity: 0.5 }}>
+        <div className="mono" style={{ fontSize: '11px', color: '#A8A294', marginTop: '6px', paddingLeft: '8px', opacity: 0.5 }}>
           {msg.time} AM
         </div>
       </div>
@@ -1042,10 +1075,10 @@ function MessageBubble({ msg }) {
                   }}></div>
                 ))}
               </div>
-              <div className="mono chapter-num" style={{ fontSize: '11px', fontWeight: 600 }}>{msg.duration}</div>
+              <div className="mono chapter-num" style={{ fontSize: '13px', fontWeight: 600 }}>{msg.duration}</div>
             </div>
             <div className="serif" style={{
-              fontSize: '13px',
+              fontSize: '15px',
               fontStyle: 'italic',
               lineHeight: 1.5,
               opacity: 0.85,
@@ -1055,7 +1088,7 @@ function MessageBubble({ msg }) {
               &ldquo;{msg.transcript}&rdquo;
             </div>
           </div>
-          <div className="mono" style={{ fontSize: '9px', color: '#A8A294', marginTop: '6px', textAlign: 'right', paddingRight: '8px', opacity: 0.5 }}>
+          <div className="mono" style={{ fontSize: '11px', color: '#A8A294', marginTop: '6px', textAlign: 'right', paddingRight: '8px', opacity: 0.5 }}>
             {msg.time} AM
           </div>
         </div>
@@ -1076,7 +1109,7 @@ function MessageBubble({ msg }) {
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '14px' }}>
             <div style={{ width: '4px', height: '4px', borderRadius: '50%', background: '#00BFA5' }}></div>
             <div className="mono" style={{
-              fontSize: '10px',
+              fontSize: '12px',
               color: '#00BFA5',
               letterSpacing: '0.15em',
               textTransform: 'uppercase'
@@ -1091,7 +1124,7 @@ function MessageBubble({ msg }) {
             borderRadius: '0 10px 10px 0'
           }}>
             <p className="serif" style={{
-              fontSize: '14px',
+              fontSize: '16px',
               lineHeight: 1.6,
               color: '#F4EFE6',
               margin: 0,
@@ -1102,7 +1135,7 @@ function MessageBubble({ msg }) {
             </p>
           </div>
         </div>
-        <div className="mono" style={{ fontSize: '9px', color: '#A8A294', marginTop: '6px', paddingLeft: '8px', opacity: 0.5 }}>
+        <div className="mono" style={{ fontSize: '11px', color: '#A8A294', marginTop: '6px', paddingLeft: '8px', opacity: 0.5 }}>
           {msg.time} AM
         </div>
       </div>
@@ -1125,7 +1158,7 @@ function MessageBubble({ msg }) {
             <path d="M5 13L9 17L19 7" stroke="#00BFA5" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
           <span className="mono" style={{
-            fontSize: '11px',
+            fontSize: '13px',
             color: '#00BFA5',
             fontWeight: 600,
             letterSpacing: '0.1em',
@@ -1162,7 +1195,7 @@ function MessageBubble({ msg }) {
                 <path d="M5 13L9 17L19 7" stroke="#0B1220" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </div>
-            <div className="serif" style={{ fontSize: '18px', color: '#F4EFE6', fontWeight: 400 }}>
+            <div className="serif" style={{ fontSize: '20px', color: '#F4EFE6', fontWeight: 400 }}>
               Done.
             </div>
           </div>
@@ -1189,17 +1222,17 @@ function MessageBubble({ msg }) {
                     <path d="M5 13L9 17L19 7" stroke="#00BFA5" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </div>
-                <div style={{ fontSize: '13px', color: '#F4EFE6' }}>{step}</div>
+                <div style={{ fontSize: '15px', color: '#F4EFE6' }}>{step}</div>
               </div>
             ))}
           </div>
           <div style={{ marginTop: '16px', paddingTop: '14px', borderTop: '1px solid rgba(244,239,230,0.08)' }}>
-            <div className="serif" style={{ fontSize: '13px', fontStyle: 'italic', color: '#A8A294' }}>
+            <div className="serif" style={{ fontSize: '15px', fontStyle: 'italic', color: '#A8A294' }}>
               Ready when you are.
             </div>
           </div>
         </div>
-        <div className="mono" style={{ fontSize: '9px', color: '#A8A294', marginTop: '6px', paddingLeft: '8px', opacity: 0.5 }}>
+        <div className="mono" style={{ fontSize: '11px', color: '#A8A294', marginTop: '6px', paddingLeft: '8px', opacity: 0.5 }}>
           {msg.time} AM
         </div>
       </div>
@@ -1246,7 +1279,7 @@ function RecordingIndicator() {
           ))}
         </div>
         <span className="mono" style={{
-          fontSize: '10px',
+          fontSize: '12px',
           color: '#00BFA5',
           letterSpacing: '0.15em',
           textTransform: 'uppercase',
