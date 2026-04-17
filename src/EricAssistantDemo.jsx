@@ -202,17 +202,17 @@ export default function EricAssistantDemo() {
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=JetBrains+Mono:wght@400;500;600&family=Instrument+Sans:wght@400;500;600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=JetBrains+Mono:wght@400;500;600&family=Instrument+Sans:wght@400;500;600&display=swap');
 
         :root {
-          --ink: #0B1220;
-          --ink-deep: #07101C;
-          --ink-2: #121B2E;
+          --ink: #0c0c0c;
+          --ink-deep: #000000;
+          --ink-2: #1c1c1e;
           --bone: #F4EFE6;
           --bone-dim: #A8A294;
-          --teal: #00BFA5;
-          --teal-dim: #009480;
-          --amber: #E8B05C;
+          --teal: #e15bc3;
+          --teal-dim: #f38161;
+          --amber: #f38161;
           --line: rgba(244, 239, 230, 0.08);
           --line-2: rgba(244, 239, 230, 0.14);
           --safe-top: env(safe-area-inset-top, 0px);
@@ -228,7 +228,7 @@ export default function EricAssistantDemo() {
           height: 100%;
           background: #000;
           color: var(--bone);
-          font-family: 'Instrument Sans', system-ui, sans-serif;
+          font-family: 'Inter', system-ui, sans-serif;
           -webkit-font-smoothing: antialiased;
           -moz-osx-font-smoothing: grayscale;
           text-rendering: optimizeLegibility;
@@ -281,8 +281,8 @@ export default function EricAssistantDemo() {
         .app-bg {
           position: fixed; inset: 0;
           background:
-            radial-gradient(ellipse 80% 60% at 50% 0%, rgba(27,42,74,0.4) 0%, transparent 70%),
-            radial-gradient(ellipse 100% 80% at 50% 100%, rgba(0,191,165,0.05) 0%, transparent 70%),
+            radial-gradient(ellipse 80% 60% at 50% 0%, rgba(225,91,195,0.18) 0%, transparent 70%),
+            radial-gradient(ellipse 100% 80% at 50% 100%, rgba(243,129,97,0.1) 0%, transparent 70%),
             linear-gradient(180deg, var(--ink) 0%, var(--ink-deep) 100%);
         }
 
@@ -303,7 +303,7 @@ export default function EricAssistantDemo() {
           transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
           -webkit-appearance: none;
         }
-        .btn-primary:active { transform: scale(0.97); background: #1ad4ba; }
+        .btn-primary:active { transform: scale(0.97); background: #e974ca; }
 
         .btn-ghost {
           background: rgba(244,239,230,0.04);
@@ -406,7 +406,7 @@ function DesktopView() {
           <div className="mono" style={{
             fontSize: '12px',
             letterSpacing: '0.3em',
-            color: '#00BFA5',
+            color: '#e15bc3',
             marginBottom: '24px'
           }}>
             MAMMOTH <span style={{ opacity: 0.5 }}>×</span> PEPLOGIX
@@ -436,8 +436,8 @@ function DesktopView() {
               position: 'absolute',
               inset: '20px 12px 20px 12px',
               borderRadius: '4px',
-              background: 'rgba(0,191,165,0.15)',
-              border: '1px solid rgba(0,191,165,0.4)'
+              background: 'rgba(225,91,195,0.15)',
+              border: '1px solid rgba(225,91,195,0.4)'
             }}></div>
           </div>
 
@@ -449,7 +449,7 @@ function DesktopView() {
             lineHeight: 1.1,
             letterSpacing: '-0.02em'
           }}>
-            Open on <em style={{ fontStyle: 'italic', color: '#00BFA5' }}>your phone</em>.
+            Open on <em style={{ fontStyle: 'italic', color: '#e15bc3' }}>your phone</em>.
           </h1>
 
           <p style={{
@@ -471,7 +471,7 @@ function DesktopView() {
             <div className="mono" style={{
               fontSize: '12px',
               letterSpacing: '0.2em',
-              color: '#00BFA5',
+              color: '#e15bc3',
               marginBottom: '12px'
             }}>
               HOW TO VIEW
@@ -485,7 +485,7 @@ function DesktopView() {
             }}>
               <li>Share this URL to your phone (text, WhatsApp, or AirDrop)</li>
               <li>Open it in Safari or Chrome on mobile</li>
-              <li>Tap <span className="mono" style={{ color: '#00BFA5' }}>Share → Add to Home Screen</span> for the full app experience</li>
+              <li>Tap <span className="mono" style={{ color: '#e15bc3' }}>Share → Add to Home Screen</span> for the full app experience</li>
             </ol>
           </div>
 
@@ -550,7 +550,7 @@ function IntroScreen({ onStart }) {
           color: '#A8A294',
           textTransform: 'uppercase'
         }}>
-          Mammoth <span style={{ color: '#00BFA5', margin: '0 6px' }}>×</span> Peplogix
+          Mammoth <span style={{ color: '#e15bc3', margin: '0 6px' }}>×</span> Peplogix
         </div>
       </div>
 
@@ -559,7 +559,7 @@ function IntroScreen({ onStart }) {
         <div className="mono" style={{
           fontSize: '13px',
           letterSpacing: '0.15em',
-          color: '#00BFA5'
+          color: '#e15bc3'
         }}>
           ——— CHAPTER 001
         </div>
@@ -671,15 +671,15 @@ function AppView({
             width: '34px',
             height: '34px',
             borderRadius: '50%',
-            background: 'linear-gradient(135deg, #00BFA5 0%, #009480 100%)',
+            background: 'linear-gradient(135deg, #e15bc3 0%, #f38161 100%)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
             flexShrink: 0,
-            boxShadow: '0 4px 14px -2px rgba(0,191,165,0.5)'
+            boxShadow: '0 4px 14px -2px rgba(225,91,195,0.5)'
           }}>
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none">
-              <path d="M12 2L13.5 8.5L20 10L13.5 11.5L12 18L10.5 11.5L4 10L10.5 8.5L12 2Z" fill="#0B1220" />
+              <path d="M12 2L13.5 8.5L20 10L13.5 11.5L12 18L10.5 11.5L4 10L10.5 8.5L12 2Z" fill="#0c0c0c" />
             </svg>
           </div>
           <div style={{ minWidth: 0 }}>
@@ -700,13 +700,13 @@ function AppView({
                     <div className="speaker-bar" style={{ animationDelay: '0.15s', height: '7px' }}></div>
                     <div className="speaker-bar" style={{ animationDelay: '0.3s', height: '7px' }}></div>
                   </div>
-                  <span className="mono" style={{ fontSize: '11px', color: '#00BFA5', letterSpacing: '0.12em', textTransform: 'uppercase', fontWeight: 600 }}>
+                  <span className="mono" style={{ fontSize: '11px', color: '#e15bc3', letterSpacing: '0.12em', textTransform: 'uppercase', fontWeight: 600 }}>
                     Speaking
                   </span>
                 </>
               ) : (
                 <>
-                  <div style={{ width: '5px', height: '5px', borderRadius: '50%', background: '#00BFA5', animation: 'breathe 2s ease-in-out infinite' }}></div>
+                  <div style={{ width: '5px', height: '5px', borderRadius: '50%', background: '#e15bc3', animation: 'breathe 2s ease-in-out infinite' }}></div>
                   <span className="mono" style={{ fontSize: '11px', color: '#A8A294', letterSpacing: '0.12em', textTransform: 'uppercase' }}>
                     Always on
                   </span>
@@ -763,7 +763,7 @@ function AppView({
           letterSpacing: '0.15em',
           color: '#A8A294'
         }}>
-          <span style={{ color: '#00BFA5' }}>CH. {scenes[currentScene].chapter}</span>
+          <span style={{ color: '#e15bc3' }}>CH. {scenes[currentScene].chapter}</span>
           <span style={{ opacity: 0.4, margin: '0 8px' }}>·</span>
           {scenes[currentScene].title.toUpperCase()}
         </div>
@@ -772,7 +772,7 @@ function AppView({
             <div key={i} style={{
               width: i === currentScene ? '20px' : '10px',
               height: '2px',
-              background: i <= currentScene ? '#00BFA5' : 'rgba(244,239,230,0.14)',
+              background: i <= currentScene ? '#e15bc3' : 'rgba(244,239,230,0.14)',
               transition: 'all 0.5s cubic-bezier(0.16, 1, 0.3, 1)',
               borderRadius: '1px'
             }}></div>
@@ -926,7 +926,7 @@ function AppView({
                 <div className="mono" style={{
                   fontSize: '12px',
                   letterSpacing: '0.2em',
-                  color: '#00BFA5',
+                  color: '#e15bc3',
                   fontWeight: 600
                 }}>
                   LISTENING
@@ -997,7 +997,7 @@ function MessageBubble({ msg }) {
           </div>
           <div className="mono" style={{
             fontSize: '12px',
-            color: '#00BFA5',
+            color: '#e15bc3',
             letterSpacing: '0.15em',
             marginBottom: '10px',
             textTransform: 'uppercase'
@@ -1043,25 +1043,25 @@ function MessageBubble({ msg }) {
       <div className="msg-enter" style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '16px' }}>
         <div style={{ maxWidth: '85%' }}>
           <div style={{
-            background: '#00BFA5',
-            color: '#0B1220',
+            background: 'linear-gradient(135deg, #e15bc3 0%, #f38161 100%)',
+            color: '#ffffff',
             borderRadius: '22px 22px 6px 22px',
             padding: '14px 16px',
-            boxShadow: '0 8px 24px -8px rgba(0,191,165,0.4)'
+            boxShadow: '0 8px 24px -8px rgba(225,91,195,0.4)'
           }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '10px' }}>
               <div style={{
                 width: '30px',
                 height: '30px',
                 borderRadius: '50%',
-                background: '#0B1220',
+                background: '#0c0c0c',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
                 flexShrink: 0
               }}>
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
-                  <path d="M8 5V19L19 12L8 5Z" fill="#00BFA5" />
+                  <path d="M8 5V19L19 12L8 5Z" fill="#e15bc3" />
                 </svg>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '3px', flex: 1 }}>
@@ -1069,7 +1069,7 @@ function MessageBubble({ msg }) {
                   <div key={i} style={{
                     width: '2px',
                     height: `${h * 20}px`,
-                    background: '#0B1220',
+                    background: '#0c0c0c',
                     borderRadius: '1px',
                     opacity: 0.6
                   }}></div>
@@ -1107,10 +1107,10 @@ function MessageBubble({ msg }) {
           maxWidth: '92%'
         }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '14px' }}>
-            <div style={{ width: '4px', height: '4px', borderRadius: '50%', background: '#00BFA5' }}></div>
+            <div style={{ width: '4px', height: '4px', borderRadius: '50%', background: '#e15bc3' }}></div>
             <div className="mono" style={{
               fontSize: '12px',
-              color: '#00BFA5',
+              color: '#e15bc3',
               letterSpacing: '0.15em',
               textTransform: 'uppercase'
             }}>
@@ -1119,7 +1119,7 @@ function MessageBubble({ msg }) {
           </div>
           <div style={{
             background: 'rgba(11,18,32,0.5)',
-            borderLeft: '2px solid #00BFA5',
+            borderLeft: '2px solid #e15bc3',
             padding: '14px 16px',
             borderRadius: '0 10px 10px 0'
           }}>
@@ -1146,8 +1146,8 @@ function MessageBubble({ msg }) {
     return (
       <div className="msg-enter" style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '16px' }}>
         <div style={{
-          background: 'rgba(0,191,165,0.15)',
-          border: '1px solid rgba(0,191,165,0.4)',
+          background: 'rgba(225,91,195,0.15)',
+          border: '1px solid rgba(225,91,195,0.4)',
           borderRadius: '999px',
           padding: '9px 18px',
           display: 'flex',
@@ -1155,11 +1155,11 @@ function MessageBubble({ msg }) {
           gap: '6px'
         }}>
           <svg className="checkmark-enter" width="12" height="12" viewBox="0 0 24 24" fill="none">
-            <path d="M5 13L9 17L19 7" stroke="#00BFA5" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M5 13L9 17L19 7" stroke="#e15bc3" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
           <span className="mono" style={{
             fontSize: '13px',
-            color: '#00BFA5',
+            color: '#e15bc3',
             fontWeight: 600,
             letterSpacing: '0.1em',
             textTransform: 'uppercase'
@@ -1186,13 +1186,13 @@ function MessageBubble({ msg }) {
               width: '28px',
               height: '28px',
               borderRadius: '50%',
-              background: '#00BFA5',
+              background: '#e15bc3',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center'
             }}>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
-                <path d="M5 13L9 17L19 7" stroke="#0B1220" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M5 13L9 17L19 7" stroke="#0c0c0c" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </div>
             <div className="serif" style={{ fontSize: '20px', color: '#F4EFE6', fontWeight: 400 }}>
@@ -1211,15 +1211,15 @@ function MessageBubble({ msg }) {
                   width: '18px',
                   height: '18px',
                   borderRadius: '50%',
-                  background: 'rgba(0,191,165,0.15)',
-                  border: '1px solid #00BFA5',
+                  background: 'rgba(225,91,195,0.15)',
+                  border: '1px solid #e15bc3',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                   flexShrink: 0
                 }}>
                   <svg width="9" height="9" viewBox="0 0 24 24" fill="none">
-                    <path d="M5 13L9 17L19 7" stroke="#00BFA5" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M5 13L9 17L19 7" stroke="#e15bc3" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </div>
                 <div style={{ fontSize: '15px', color: '#F4EFE6' }}>{step}</div>
@@ -1265,8 +1265,8 @@ function RecordingIndicator() {
   return (
     <div className="msg-enter" style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '16px' }}>
       <div style={{
-        background: 'rgba(0,191,165,0.1)',
-        border: '1px solid rgba(0,191,165,0.3)',
+        background: 'rgba(225,91,195,0.1)',
+        border: '1px solid rgba(225,91,195,0.3)',
         borderRadius: '999px',
         padding: '11px 20px',
         display: 'flex',
@@ -1280,7 +1280,7 @@ function RecordingIndicator() {
         </div>
         <span className="mono" style={{
           fontSize: '12px',
-          color: '#00BFA5',
+          color: '#e15bc3',
           letterSpacing: '0.15em',
           textTransform: 'uppercase',
           fontWeight: 600
